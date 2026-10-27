@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <id>ru.local.hello_tanker</id>
+  <version>1.0.0</version>
+  <name>Hello Tanker</name>
+  <description>Учебный шаблон мода: запись в python.log, приветствие в ангаре, сводка по бою в боевом чате.</description>
+</root>

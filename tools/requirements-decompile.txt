@@ -1,0 +1,13 @@
+# Optional decompiler for tools/extract_client_source.py and the
+# py27c.py --self-test / --check-opmap round trips.  GPL-licensed tools:
+# install them into the git-ignored .tools/ venv, never commit or bundle them.
+#
+#   python -m venv .tools\venv_uncompyle
+#   .tools\venv_uncompyle\Scripts\python.exe -m pip install -r tools\requirements-decompile.txt
+#
+# Pinned: other uncompyle6/xdis releases render code differently, and two trees
+# extracted with different versions then differ in places the client did not
+# change.  Tested with Python 3.12.
+uncompyle6==3.9.3
+xdis==6.1.8
+spark-parser==1.9.0

@@ -1,0 +1,28 @@
+{
+  "_readme": "Образец конфига мода Hello Tanker. Скопируйте этот файл в каталог игры: mods/configs/hello_tanker/config.json (относительно корня установки игры, там, где лежит paths.xml). Файл НЕ обязателен — без него мод работает на значениях по умолчанию. Комментарии в JSON не поддерживаются, поэтому пояснения вынесены в ключи с префиксом _ — мод их просто игнорирует.",
+
+  "_enabled": "Общий выключатель мода. false — мод загрузится, напишет в python.log строку \"disabled by config\" и больше ничего делать не будет: ни приветствия в ангаре, ни отчёта в бою, ни монкипатча. Проверяется и в init(), и в обработчиках событий — загрузчик шлёт их моду независимо от того, что вернул init().",
+  "enabled": true,
+
+  "_debug": "true — уровень логгера DEBUG: в python.log попадут все служебные строки [HelloTanker]. false — только INFO/ERROR.",
+  "debug": false,
+
+  "_count_own_hits": "true — поставить демонстрационный монкипатч на Avatar.PlayerAvatar.showShotResults и считать СВОИ пробития за бой (итог пишется в python.log). Читаются только результаты собственных выстрелов, которые клиент и так показывает индикатором попаданий.",
+  "count_own_hits": true,
+
+  "_hangar_greeting": "Системное сообщение в ангаре (центр уведомлений) после события onAccountShowGUI. Поля шаблона text: {mod}, {version}, {id}.",
+  "hangar_greeting": {
+    "enabled": true,
+    "delay_sec": 3.0,
+    "once_per_session": true,
+    "text": "{mod} v{version}: мод загружен. Хорошего боя, танкист!"
+  },
+
+  "_battle_report": "Однократное сообщение в боевой чат после g_playerEvents.onAvatarReady. Поля шаблона text: {mod}, {version}, {map} — локализованное имя карты, {geometry} — техническое имя карты, {battle_type} — метка режима из ARENA_GUI_TYPE_LABEL, {gui_type} — числовой guiType, {allies} — союзники БЕЗ самого игрока, {enemies} — противники. show_in_replay=false — в реплеях мод молчит.",
+  "battle_report": {
+    "enabled": true,
+    "delay_sec": 2.0,
+    "show_in_replay": false,
+    "text": "{mod}: карта «{map}», режим «{battle_type}», союзников {allies}, противников {enemies}"
+  }
+}

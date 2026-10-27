@@ -1,0 +1,36 @@
+# --- build output ----------------------------------------------------------
+# dist/ holds the built .mtmod, the _stage/ staging tree and dev_manifest.json
+dist/
+
+# build/ is the intermediate tree used by the standalone tools/ scripts
+build/
+
+# compiled bytecode anywhere (stray `py27c.py ... -o mod.pyc`, raw client .pyc
+# from extract_client_source.py --out <somewhere>): build.py always compiles
+# the entry point itself, a committed .pyc would never be used
+*.pyc
+*.pyo
+
+# --- local toolchain -------------------------------------------------------
+# venv with uncompyle6/xdis (GPL tools: install them locally, never commit them)
+.tools/
+
+# --- client sources: decompiled Lesta code, NEVER commit or publish it ----
+# unpacked scripts.pkg, decompiled client trees, other people's mods
+.scratch/
+# the same outputs if someone points --out elsewhere in the tree
+client-src/
+wot-src/
+wot-src-*/
+
+# --- python ----------------------------------------------------------------
+__pycache__/
+
+# --- local config / editors / OS -------------------------------------------
+# config.sample.json IS committed; a real local config is not
+config.json
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini

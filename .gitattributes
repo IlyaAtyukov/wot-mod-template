@@ -1,0 +1,12 @@
+# Line endings must not depend on the core.autocrlf of whoever clones the repo.
+* text=auto eol=lf
+
+# PowerShell scripts stay CRLF (Windows PowerShell 5.1 friendly).
+*.ps1   text eol=crlf
+
+# Binary files: no conversion, no text diff.
+*.pyc   binary
+*.mtmod binary
+*.pkg   binary
+*.zip   binary
+*.png   binary
